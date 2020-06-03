@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Counter :defaultCount="-2" minCount="-4" maxCount="4"/>
+    <Counter :defaultCount="0" minCount="-2" maxCount="2"/>
+    <Counter :defaultCount="3" minCount="0" maxCount="5"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Counter from './components/Counter.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Counter
   }
 }
 </script>
