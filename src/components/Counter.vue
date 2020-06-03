@@ -26,10 +26,12 @@ export default {
     },
     methods:{
         decrease: function(){
+            this.$emit('btn-click');
             if(this.count > this.minCount){
                 this.count--;
                 this.msg = "The Counter has been decreased to " + this.count;
                 this.isRed = false;
+
             }
             else{
                 this.msg = "The Counter cannot be decreased below " + this.minCount;
@@ -37,6 +39,7 @@ export default {
             }
         },
         increase: function(){
+            this.$emit('btn-click');
             if(this.count < this.maxCount){
                 this.count++;
                 this.msg = "The Counter has been increased to " + this.count;
@@ -46,7 +49,8 @@ export default {
                 this.msg = "The Counter cannot be increased after " + this.maxCount;
                 this.isRed = true;
             }
-        }
+        },
+        
     }
     
 }

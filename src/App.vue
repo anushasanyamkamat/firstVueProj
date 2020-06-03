@@ -1,9 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Counter :defaultCount="-2" minCount="-4" maxCount="4"/>
-    <Counter :defaultCount="0" minCount="-2" maxCount="2"/>
-    <Counter :defaultCount="3" minCount="0" maxCount="5"/>
+    <h1>Button Clicked Count:- {{btnCount}} </h1>
+    <Counter  
+      :defaultCount="-2" 
+      :minCount="-4" 
+      :maxCount="4" 
+      v-on:btn-click="btnCount++"/>
+    <Counter 
+      :defaultCount="-2" 
+      :minCount="-4" 
+      :maxCount="4" 
+      v-on:btn-click="btnCount++"/>
+    <Counter 
+      :defaultCount="-2" 
+      :minCount="-4" 
+      :maxCount="4" 
+      v-on:btn-click="btnCount++"/>
   </div>
 </template>
 
@@ -14,6 +26,11 @@ export default {
   name: 'App',
   components: {
     Counter
+  },
+  data: function(){
+    return{
+      btnCount: 0
+    }
   }
 }
 </script>
